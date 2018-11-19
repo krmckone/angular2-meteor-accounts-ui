@@ -209,7 +209,7 @@ export class LoginButtons {
     let email: string = this.credentials.email;
     let password: string = this.credentials.password;
 
-    Meteor.loginWithPassword(email, password, (error) => {
+    Meteor.loginWithPassword({email: email}, password, (error) => {
       if (error) {
         this.errors.push(error.reason || "Unknown error");
       }
