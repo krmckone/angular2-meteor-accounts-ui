@@ -43,7 +43,7 @@ var LoginButtons = (function () {
         this.resetErrors();
         var email = this.credentials.email;
         var password = this.credentials.password;
-        meteor_1.Meteor.loginWithPassword(email, password, function (error) {
+        meteor_1.Meteor.loginWithPassword({email: email}, password, function (error) {
             if (error) {
                 _this.errors.push(error.reason || "Unknown error");
             }
